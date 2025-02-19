@@ -1,0 +1,196 @@
+:root {
+  --green: #0f4301;
+  --middlegreen: #11720f;
+  --lightgreen: rgb(55, 189, 68);
+  --white: rgb(254, 253, 254);
+  --white-a: #0f430114;
+  --green-g: linear-gradient(15deg, var(--green) 0%, var(--middlegreen) 45%, var(--lightgreen) 100%);
+
+  --rice: #f4f4eb;
+  --nori: #040f00;
+  --mango: #e2b100;
+  --tomato: rgb(200, 37, 11);
+}
+
+
+
+body {
+  font-family: "SUSE";
+  /*font-family: "Moderustic";*/
+
+  margin: 0;
+  padding: 0 16%;
+  border: none;
+  background-color: var(--white-a);
+
+  color: var(nori);
+
+}
+
+main {
+  background-color: var(--white);
+}
+
+h1 {
+  margin: 0;
+  padding: 24px 16%;
+  border-bottom: 2px var(--lightgreen) solid;
+}
+
+p {
+  margin-left: 16%;
+  margin-right: 16%;
+  margin-top: 0;
+  padding-top: 12px;
+}
+
+ul {
+  margin-left: 18%;
+  margin-right: 18%;
+}
+
+.parallax {
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img-1 {
+  background-image: url("assets/images/IMG_1488.JPG");
+}
+
+.img-2 {
+  background-image: url("assets/images/IMG_1536.JPG");
+}
+
+.img-3 {
+  background-image: url("assets/images/IMG_1490.JPG");
+}
+
+
+.text {
+  background: var(--green-g);
+  color: var(--white);
+  /*padding: 24px 10% 48px;*/
+  padding: 12px 0 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.text p {
+  /*margin: 0;
+  padding: 24px;*/
+  
+  font-weight: 200;
+  /*background-color: var(--white-a);*/
+  /*background: var(--green-g);*/
+  /*border-radius: 24px;
+  border: 2px var(--white-a) solid;*/
+}
+
+
+.rolling-sushi {
+  position: absolute;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  bottom: 0px;
+  left: -36px;
+  background-color: var(--nori);
+  animation-name: rolling;
+  animation-duration: 8s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+@keyframes rolling {
+  from {left: -36px;}
+  to {left: calc(100% + 36px)}
+}
+.rice {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: var(--rice);
+  margin: 2px;
+  padding: 8px;
+}
+.mango {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: var(--mango); 
+}
+.tomato {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: var(--tomato); 
+}
+
+
+.arrow-down {
+  position: absolute;
+  height: 0; 
+  width: 0;
+  border-left: 100vw solid transparent;
+  border-bottom: 20px solid transparent;
+  left: 0;
+  bottom: -20px;
+  
+  border-top: 20px solid #f00;
+}
+
+
+
+
+
+
+
+.box {
+  background-color: var(--rice);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-sushi {
+
+  width: 8%;
+
+  position: absolute;
+
+  animation: rotate 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+    /*top: calc((var(--scroll) * 1700px) - 700px);*/
+    top: calc(var(--box) * -1px + 300px);
+  }
+
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+  body {
+    padding: 0;
+  }
+
+  h1 {
+    padding: 24px 8%;
+  }
+  
+  p {
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  ul {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
